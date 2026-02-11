@@ -16,7 +16,7 @@ it is platform independent("write once, run anywhere")
 class = Blueprint  
 main = class name   
 
-##public static void main(String[] args)  
+## public static void main(String[] args)  
  all the execution starts from main  
 system.outprintln()  
 println = print + move to next line  
