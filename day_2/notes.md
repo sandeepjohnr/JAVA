@@ -1,100 +1,145 @@
 # Day 2
 
-        class xyz{
-            public static void main(String[]args){
-                System.out println("start");  
-                xyz.createOTP();
-                System.out println("start"); 
+## Methods Example
 
-            }
-            public static void createOTP(){
-                System.out println("OTP created");
-            }
-        }
+``` java
+class Xyz {
+    public static void main(String[] args) {
+        System.out.println("start");
+        Xyz.createOTP();
+        System.out.println("end");
+    }
+
+    public static void createOTP() {
+        System.out.println("OTP created");
+    }
+}
+```
+
+------------------------------------------------------------------------
 
 ## Method
-method is a set of statement which is used to perform a specific task. to execute method statement calling a method is compilsory. main method is called by JRE.
 
-if we create public class in java file then the file name should be same as class name.  
-we can create any number of default classes in java file but we can not create more than one public class 
-       
-        class x{
-                    public static void main(String[]args){
-                        System.out println("start");  
-                        xyz.createOTP();
-                        System.out println("start"); 
+A method is a set of statements used to perform a specific task.\
+To execute the statements inside a method, calling the method is
+compulsory.\
+The `main` method is called by the JRE (Java Runtime Environment).
 
-                    }
-        }
+If we create a `public` class in a Java file, then the file name must be
+the same as the class name.
 
-        class y{
-            public static void main(String[]args){
-                System.out println("start");  
-                xyz.createOTP();
-                System.out println("start"); 
+We can create any number of default (non-public) classes in a Java file,
+but we cannot create more than one `public` class in the same file.
 
-            }
-        }
+------------------------------------------------------------------------
 
-for the above code can be in the same file but when compled there will different bytecode generated for both class seperatly  
- 
+## Multiple Classes in One File
 
-## Variables
- it is a container which is used to store value  
- java is strictly typed programming language (which means data-type is used while creating the variable )  
+``` java
+class X {
+    public static void main(String[] args) {
+        System.out.println("start");
+        Y.createOTP();
+        System.out.println("end");
+    }
+}
 
-### syntax
-        data type varname;
+class Y {
+    public static void createOTP() {
+        System.out.println("OTP created");
+    }
+}
+```
 
-        varname = value;
+For the above code, both classes can be in the same file.\
+When compiled, separate bytecode (`.class`) files will be generated for
+each class.
 
-example code:  
-        class xyz{
-            public static void main(String[]args){
-                int age; decleration  
-                age = 23; initilization  
-                System.out println("start");  
+------------------------------------------------------------------------
 
-            }
-        }
+# Variables
 
-redeclaration of a variable is not possible in java  
-example:  
-        int n = 10;
-        System.out.println(n);
-        int n = 20; // REdecleration - which will throw an error   
-        System.out.println(n);  
+A variable is a container used to store a value.
 
+Java is a strictly typed programming language, which means a data type
+must be specified while creating a variable.
 
-        int n = 10;
-        System.out.println(n);
-        n = 20; // reinitilization which is acceptable 
-        System.out.println(n);
-## Data Type
-there are two types of datatype 
+### Syntax
 
-|Data Type|
-|primitive|non-primitive|
-|byte|String|
-|short|class name|
-|int|array|
-|long|object|
-|float||
-|double||
-|char||
-|boolean||
+``` java
+dataType variableName;
+variableName = value;
+```
 
+### Example
 
+``` java
+class Xyz {
+    public static void main(String[] args) {
+        int age; // declaration
+        age = 23; // initialization
+        System.out.println(age);
+    }
+}
+```
 
-|data type|size|
-|byte|1byte|
-|short|2byte|
-|int|4byte|
-|long|8byte|
-|float|4byte|
-|double|8byte|
-|char|2byte|
-|boolean|1byte|
- 
+------------------------------------------------------------------------
 
-in java char has 2byte because it supports unicode  
+## Redeclaration of Variables
+
+Redeclaration of a variable is not allowed in Java.
+
+### Example (Error)
+
+``` java
+int n = 10;
+System.out.println(n);
+int n = 20; // Redeclaration - This will throw an error
+System.out.println(n);
+```
+
+### Reinitialization (Allowed)
+
+``` java
+int n = 10;
+System.out.println(n);
+n = 20; // Reinitialization - This is allowed
+System.out.println(n);
+```
+
+------------------------------------------------------------------------
+
+# Data Types
+
+There are two types of data types in Java:
+
+## Primitive vs Non-Primitive
+
+  Primitive   Non-Primitive
+  ----------- -----------------
+  byte        String
+  short       class
+  int         array
+  long        object
+  float       interface
+  double      enum
+  char        wrapper classes
+  boolean     collections
+
+------------------------------------------------------------------------
+
+## Primitive Data Type Sizes
+
+  Data Type   Size      Description
+  ----------- --------- -----------------------------------------
+  byte        1 byte    Stores small integers (-128 to 127)
+  short       2 bytes   Stores medium integers
+  int         4 bytes   Most commonly used integer type
+  long        8 bytes   Stores very large integers
+  float       4 bytes   Stores decimal numbers (less precision)
+  double      8 bytes   Stores decimal numbers (high precision)
+  char        2 bytes   Stores a single character (Unicode)
+  boolean     1 bit\*   Stores true or false
+
+\*Boolean size is JVM dependent internally but logically represents true
+or false.
