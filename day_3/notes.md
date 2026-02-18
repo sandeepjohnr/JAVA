@@ -1,4 +1,4 @@
-# Java Notes (Fully Explained in Simple and Clear Language)
+# Java Notes 
 
 ---
 
